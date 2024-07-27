@@ -12,5 +12,13 @@
     "quote_div_main": "div.grid-item.qb.clearfix.bqQt",
     "title_selector": "div",
     "author_selector": "a.bq-aut.qa_109542.oncl_a"
+  },
+
+  {
+    "spidername": "AZ Quotes",
+    "start_urls": ["https://www.azquotes.com/quotes/topics/life.html"],
+    "quote_div_main": "div.wrap-block",
+    "title_selector": "p a.title",
+    "author_selector": "div.author a"
   }
 ]
