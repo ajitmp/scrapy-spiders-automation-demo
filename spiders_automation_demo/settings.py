@@ -17,7 +17,7 @@ NEWSPIDER_MODULE = "spiders_automation_demo.spiders"
 #USER_AGENT = "spiders_automation_demo (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -61,7 +61,7 @@ ROBOTSTXT_OBEY = True
 #}
 
 # Configure item pipelines
-# See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
+# # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     'spiders_automation_demo.pipelines.FilterQuotesPipelineLoveOrLife': 300,
 }
@@ -91,3 +91,11 @@ ITEM_PIPELINES = {
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
+
+FEEDS = {
+    '%(name)s_quotes.json': {
+        'format': 'json',
+        'overwrite': True,
+    },
+}
+

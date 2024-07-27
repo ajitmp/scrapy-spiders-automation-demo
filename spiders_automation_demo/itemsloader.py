@@ -1,7 +1,8 @@
 #spiders_automation_demo/itemsloader.py
 #required imports
 from scrapy.loader import ItemLoader
-from scrapy.loader.processors import TakeFirst,MapCompose
+from itemloaders.processors import TakeFirst,MapCompose
+
 
 #define your methods to apply on item value
 def to_title_case(title):
