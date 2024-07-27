@@ -1,7 +1,16 @@
-{
-  "spidername": "Quote Ajit Source",
-  "start_urls": ["https://quotes-scrape.netlify.app/"],
-  "quote_div_main": "div.quote-container",
-  "title_selector": "h2.title",
-  "author_selector": "p.author"
-}
+[
+  {
+    "spidername": "Quote Ajit Source",
+    "start_urls": ["https://quotes-scrape.netlify.app/"],
+    "quote_div_main": "div.quote-container",
+    "title_selector": "h2.title",
+    "author_selector": "p.author"
+  },
+  {
+    "spidername": "Brainy Quote",
+    "start_urls": ["https://www.brainyquote.com/topics/life-quotes"],
+    "quote_div_main": "div.grid-item.qb.clearfix.bqQt",
+    "title_selector": "div",
+    "author_selector": "a.bq-aut.qa_109542.oncl_a"
+  }
+]
