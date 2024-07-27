@@ -1,16 +1,15 @@
-##spiders_automation_demo/spiders/QuotesWithItemLoader.py
 import scrapy
 from spiders_automation_demo.items import QuoteItem
 from spiders_automation_demo.itemsloader import QuoteLoader
 
-class QuotesSpider(scrapy.Spider):
-    name = "QuotesWithItemLoader"
-    allowed_domains = ["quotes.toscrape.com"]
-    start_urls = ["https://quotes.toscrape.com/"]
+class QuotesajitsourceSpider(scrapy.Spider):
+    name = "QuotesAjitSource"
+    allowed_domains = ["quotes-scrape.netlify.app"]
+    start_urls = ['https://quotes-scrape.netlify.app/']
 
     def parse(self, response):
         #each quote is within <div class="quote" ...>
-        quotes = response.css("div.quote")
+        quotes = response.css("div.quote-container")
         for quote in quotes:
             #create your item object
             #quote_item = QuoteItem()
@@ -18,9 +17,9 @@ class QuotesSpider(scrapy.Spider):
             loader = QuoteLoader(item=QuoteItem(), selector=quote)
             #add your selector to your item
             #each quote text is within <span class="text" ...>
-            loader.add_css('title',"span.text::text")
+            loader.add_css('title',"h2.title::text")
             #each author info is within <small class="author" ...>
-            loader.add_css('author',"small.author::text")  
+            loader.add_css('author',"p.author::text")  
 
             #yield your item via the loader using .load_item()
             yield loader.load_item()

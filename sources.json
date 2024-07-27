@@ -1,0 +1,7 @@
+{
+  "spidername": "Quote Ajit Source",
+  "start_urls": ["https://quotes-scrape.netlify.app/"],
+  "quote_div_main": "div.quote-container",
+  "title_selector": "h2.title",
+  "author_selector": "p.author"
+}
